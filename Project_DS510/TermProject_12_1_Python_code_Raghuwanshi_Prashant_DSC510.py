@@ -162,7 +162,7 @@ class fetchweather:
 
     def validate_zipcode(self, zipcode):
         # Get the city list from OpenWeatherMap, read to pandas dataframe
-        val_zip = makecall(self.zipurl, zipcode+'?key=JVSRC129DYJ4BT1OR9LJ')
+        val_zip = makecall(self.zipurl, zipcode+'?key=')
         zipdata = val_zip.json()
         return zipdata
 
@@ -194,7 +194,7 @@ def main():
         print(f'Hello User ,Welcome to Weather Forecast Display System: ')
         weatherurl = 'http://api.openweathermap.org/data/2.5/'
         zipurl = 'https://api.zip-codes.com/ZipCodesAPI.svc/1.0/QuickGetZipCodeDetails/'
-        weatherurlapikey = '53e42d0c4221a121d4c63a5c42afe40a'
+        weatherurlapikey = ''
         continueoperation = 'Y'
         weatherinstance = fetchweather(weatherurlapikey, weatherurl, zipurl)
         while continueoperation == 'Y' or continueoperation == 'y':
